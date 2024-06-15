@@ -10,8 +10,8 @@ function solve(array) {
         garage[garageNumber].push(data);     
     }
       
-    for (let [garageNumer, data] of Object.entries(garage)) {
-        console.log(`Garage № ${garageNumer}`);
+    for (let [garageNumber, data] of Object.entries(garage)) {
+        console.log(`Garage № ${garageNumber}`);
         for (let info of data) {
             console.log(`--- ${info.join(", ").replaceAll(":", " -")}`)
         }
