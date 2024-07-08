@@ -23,17 +23,12 @@ function solve() {
   
       let ageP = document.createElement("p");
       ageP.textContent = `Age:${ageElement.value}`;
-      let name = ageElement.value;
-    
-  
+
       let petP = document.createElement("p");
       petP.textContent = `Pet:${typeOfAnimalElement.value}`;
-      let phone = typeOfAnimalElement.value;
   
       let genderP = document.createElement("p");
       genderP.textContent = `Gender:${genderElement.value}`;
-      let gender = genderElement.value;
-
 
       articleElement.appendChild(petP);
       articleElement.appendChild(genderP);
@@ -61,12 +56,12 @@ function solve() {
       genderElement.value = '';
 
     edinButtonElement.addEventListener('click', (e) => {
-      [info1, info2, info3] = articleElement.children;
-  
-      [data, pet] = info1.textContent.split(":");
-      [data, age] = info3.textContent.split(":");
-      [data, gender] = info2.textContent.split(":");
-      
+      [info1, info2, info3] = Array.from(articleElement.children);
+
+      let [dontNeed1, pet] = info1.textContent.split(":");
+      let [dontNeed2, age] = info3.textContent.split(":");
+      let [dontNeed3, gender] = info2.textContent.split(":");
+
       typeOfAnimalElement.value = pet;
       ageElement.value = age;
       genderElement.value = gender;
@@ -76,7 +71,7 @@ function solve() {
 
     doneButtonElement.addEventListener('click', (e) => {
       let adoptedListElement= document.getElementById('adopted-list');
-      liElement.lastChild.remove()
+      liElement.removeChild(divElement)
       
       let clearButton = document.createElement('button');
       clearButton.textContent = 'Clear';
