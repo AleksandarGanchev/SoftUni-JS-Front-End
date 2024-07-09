@@ -17,10 +17,9 @@ function attachEventsListeners() {
     }
 
     buttonElement.addEventListener('click', (e) => {
-        outputDistanceElement.value = ( converter[inputUnits.value] * inputDistanceElement.value
-        ) / converter[outputUnits.value];
-
         // let inputToMeters = converter[inputUnits.value] * inputDistanceElement.value;
         // outputDistanceElement.value = inputToMeters / converter[outputUnits.value];
+        outputDistanceElement.value = (converter[inputUnits.value] * inputDistanceElement.value
+         / converter[outputUnits.value]);
     })  
 }
