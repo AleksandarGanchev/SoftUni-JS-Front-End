@@ -40,6 +40,6 @@ function solve(array) {
     }
 
     for (let [baristaName, value] of Object.entries(output)) {
-        console.log(`Barista: ${baristaName}, Shift: ${value[0].toString()}, Drinks: ${value[1].join(", ")}`);
+        console.log(`Barista: ${baristaName}, Shift: ${value[0]}, Drinks: ${value[1].join(", ")}`);
     }
 }
