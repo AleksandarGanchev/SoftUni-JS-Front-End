@@ -18,16 +18,3 @@ console.log(fib()); // 3
 console.log(fib()); // 5
 console.log(fib()); // 8
 console.log(fib()); // 13);
-
-
-
-
-// function getFibonator() {
-//     let fibNumbers = [0, 1];
-//     function inner() {
-//         let nextNumber = (`${fibNumbers.length - 2} + ${fibNumbers.length - 1}`);
-//         fibNumbers.push(nextNumber);
-//         console.log(`${nextNumber}`)
-//         return
-//     }
-// }
