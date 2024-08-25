@@ -6,7 +6,6 @@ function juiceFLavors(arr) {
         let [juiceType, quantity] = element.split(" => ");
         quantity = Number(quantity);
 
-        // Accumulate juice in obj
         if (!obj.hasOwnProperty(juiceType)) {
             obj[juiceType] = 0;
         }
