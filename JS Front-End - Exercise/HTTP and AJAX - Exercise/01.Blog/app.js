@@ -1,5 +1,5 @@
 function attachEvents() {
-    
+
     const loadPostsButton = document.querySelector('#btnLoadPosts');
     const viewPostButton = document.querySelector('#btnViewPost');
     const postELement = document.querySelector('#posts');
@@ -9,7 +9,8 @@ function attachEvents() {
     const commentsUrl = 'http://localhost:3030/jsonstore/blog/comments';
     const postUrl = 'http://localhost:3030/jsonstore/blog/posts'; 
 
-    loadPostsButton.addEventListener('click', () =>  {    
+    loadPostsButton.addEventListener('click', () =>  {
+        postELement.innerHTML = '';    
         fetch(postUrl)
             .then(res => res.json())
             .then(data => {               
@@ -34,14 +35,17 @@ function attachEvents() {
         fetch(commentsUrl)
             .then(res => res.json())
             .then(data => {
-                const match = Object.values(data).find(comment => comment.postId === targetId);
+                const matches = Object.values(data).filter(comment => comment.postId === targetId);         
                 const obj = Object.values(entriesArray).find(id => id.id === targetId);
                 postTitleElement.textContent = obj.title;
                 postBodyElement.textContent = obj.body;
                 postCommentElement.innerHTML = ''
-                let liElement = document.createElement('li');
-                liElement.textContent = match.text;
-                postCommentElement.appendChild(liElement);
+
+                matches.forEach(match => {
+                    let liElement = document.createElement('li');
+                    liElement.textContent = match.text;
+                    postCommentElement.appendChild(liElement);
+                })               
             })    
     });    
 };
